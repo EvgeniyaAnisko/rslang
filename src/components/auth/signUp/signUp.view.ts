@@ -8,6 +8,7 @@ export default abstract class SignUpView {
   public static getSignUpImage(): string {
     return `
         <div class="signUp-wrapper">
+            <h2>SignUp</h2>
             ${Name.getNameImage()}
             ${Email.getEmailImage()}
             ${Password.getPasswordImage()}

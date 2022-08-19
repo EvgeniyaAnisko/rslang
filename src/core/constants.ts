@@ -1,5 +1,5 @@
 enum Endpoints {
-  AppHost = 'http://localhost:3000',
+  AppHost = 'https://evgeniyaanisko-rslang.herokuapp.com',
 }
 
 export default Endpoints;

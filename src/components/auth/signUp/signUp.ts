@@ -3,6 +3,7 @@ import AuthService from '../../../core/services/auth/auth.service';
 import EmailValidation from '../view/email/email.validation';
 import PasswordValidation from '../view/password/password.validation';
 import NameValidation from '../view/name/name.validation';
+import SignInButton from '../../app/view/signIn/signInButton';
 
 export default class SignUp {
   private authService: AuthService;
@@ -34,9 +35,7 @@ export default class SignUp {
     if (res) {
       const root = document.getElementById('root') as HTMLElement;
       root.innerHTML = '';
-      root.insertAdjacentHTML('beforeend', `<p>Name: ${res.name}</p>`);
-      root.insertAdjacentHTML('beforeend', `<p>Email: ${res.email}</p>`);
-      root.insertAdjacentHTML('beforeend', `<p>Password: ${res.password}</p>`);
+      root.insertAdjacentHTML('beforeend', '<h4>You successfully registered. SignIn to the App</h4>');
     } else {
       const incorrectInputs = document.querySelector('.incorrect-inputs') as HTMLElement;
       incorrectInputs.classList.remove('hidden');

@@ -6,6 +6,7 @@ export default abstract class SignInView {
   public static getSignInImage(): string {
     return `
         <div class="signIn-wrapper">
+            <h2>SignIn</h2>
             ${Email.getEmailImage()}
             ${Password.getPasswordImage()}
             ${Submit.getSubmitButtonImage()}

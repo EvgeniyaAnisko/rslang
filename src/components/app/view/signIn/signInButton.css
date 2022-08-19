@@ -1,0 +1,21 @@
+.signIn-button {
+    width: 150px;
+    height: 30px;
+    border: none;
+    background-color: dodgerblue;
+    color: white;
+    font-size: 18px;
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.signIn-button:hover {
+    background: #1282ef;
+}
+
+.signIn-button:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}

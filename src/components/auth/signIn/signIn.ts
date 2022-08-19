@@ -2,6 +2,7 @@ import SignInView from './signIn.view';
 import AuthService from '../../../core/services/auth/auth.service';
 import EmailValidation from '../view/email/email.validation';
 import PasswordValidation from '../view/password/password.validation';
+import LogOutButton from '../../app/view/logOut/logOutButton';
 import './signIn.css';
 
 export default class SignIn {
@@ -29,11 +30,8 @@ export default class SignIn {
     if (res) {
       const root = document.getElementById('root') as HTMLElement;
       root.innerHTML = '';
-      root.insertAdjacentHTML('beforeend', `<p>Message: ${res.message}</p>`);
-      root.insertAdjacentHTML('beforeend', `<p>Name: ${res.name}</p>`);
-      root.insertAdjacentHTML('beforeend', `<p>UserId: ${res.userId}</p>`);
-      root.insertAdjacentHTML('beforeend', `<p>Token: ${res.token}</p>`);
-      root.insertAdjacentHTML('beforeend', `<p>RefreshToken: ${res.refreshToken}</p>`);
+      root.insertAdjacentHTML('beforeend', `<div>${LogOutButton.getLogOutButtonImage()}</div>`);
+      root.insertAdjacentHTML('beforeend', '<h3>Welcome to App</h3>');
     } else {
       const incorrectInputs = document.querySelector('.incorrect-inputs') as HTMLElement;
       incorrectInputs.classList.remove('hidden');
