@@ -1,0 +1,71 @@
+.signIn-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signIn-wrapper__input {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.email-label,
+.password-label {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.email,
+.password {
+    width: 300px;
+    height: 30px;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+}
+
+.email:focus,
+.password:focus {
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.invalid-email,
+.invalid-password {
+    margin: 5px 0 2px 0;
+    font-size: 15px;
+    color: crimson;
+}
+
+.signIn-submit {
+    width: 308px;
+    height: 35px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 4px;
+    background: dodgerblue;
+    color: white;
+    font-size: 18px;
+}
+
+.signIn-submit:hover {
+    background: #1282ef;
+}
+
+.signIn-submit:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.invalid {
+    border: 1px solid crimson;
+}
