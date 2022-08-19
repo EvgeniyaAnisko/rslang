@@ -28,6 +28,7 @@ export default class SignIn {
 
     const res = await this.authService.signIn({ email: email.value, password: password.value });
     if (res) {
+      localStorage.setItem('token', res.token);
       const root = document.getElementById('root') as HTMLElement;
       root.innerHTML = '';
       root.insertAdjacentHTML('beforeend', `<div>${LogOutButton.getLogOutButtonImage()}</div>`);
