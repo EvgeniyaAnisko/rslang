@@ -15,7 +15,8 @@ export default class App {
 
   public addEventListener() {
     (document.querySelector('.signUp') as HTMLElement).addEventListener('click', () => {
-      SignUp.init();
+      const signUp = new SignUp();
+      signUp.init();
     });
 
     (document.querySelector('.signIn') as HTMLElement).addEventListener('click', () => {

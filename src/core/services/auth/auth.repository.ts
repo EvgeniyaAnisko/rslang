@@ -5,18 +5,20 @@ import { ISignInResponse } from '../models/ISignInResponse';
 
 export default class AuthRepository {
   // SignUp
-  public signUp(data: ISignUp) {
+  public signUp(data: ISignUp): Promise<ISignUp | null> {
     return fetch(`${Endpoints.AppHost}/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    }).then((res) => res.json());
+    })
+      .then((res) => res.json() as Promise<ISignUp>)
+      .catch(() => null);
   }
 
   // SignIn
-  public signIn(data: ISignIn): Promise<ISignInResponse> {
+  public signIn(data: ISignIn): Promise<ISignInResponse | null> {
     return fetch(`${Endpoints.AppHost}/signin`, {
       method: 'POST',
       headers: {
@@ -24,6 +26,8 @@ export default class AuthRepository {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    }).then((res) => res.json() as Promise<ISignInResponse>);
+    })
+      .then((res) => res.json() as Promise<ISignInResponse>)
+      .catch(() => null);
   }
 }

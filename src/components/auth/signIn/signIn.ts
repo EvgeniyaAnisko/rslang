@@ -1,7 +1,8 @@
 import SignInView from './signIn.view';
 import AuthService from '../../../core/services/auth/auth.service';
+import EmailValidation from '../view/email/email.validation';
+import PasswordValidation from '../view/password/password.validation';
 import './signIn.css';
-import AppView from '../../app/app.view';
 
 export default class SignIn {
   private authService: AuthService;
@@ -24,34 +25,34 @@ export default class SignIn {
     const email = document.getElementById('email') as HTMLInputElement;
     const password = document.getElementById('password') as HTMLInputElement;
 
-    if (email.value === '' || !email.value.slice(-10).includes('@gmail.com')) {
-      email.classList.add('invalid');
-      const invalidEmail = document.querySelector('.invalid-email') as HTMLElement;
-      invalidEmail.classList.toggle('hidden');
-    } else if (password.value === '' || password.value.length < 8) {
-      password.classList.add('invalid');
-      const invalidPassword = document.querySelector('.invalid-password') as HTMLElement;
-      invalidPassword.classList.toggle('hidden');
+    const res = await this.authService.signIn({ email: email.value, password: password.value });
+    if (res) {
+      const root = document.getElementById('root') as HTMLElement;
+      root.innerHTML = '';
+      root.insertAdjacentHTML('beforeend', `<p>Message: ${res.message}</p>`);
+      root.insertAdjacentHTML('beforeend', `<p>Name: ${res.name}</p>`);
+      root.insertAdjacentHTML('beforeend', `<p>UserId: ${res.userId}</p>`);
+      root.insertAdjacentHTML('beforeend', `<p>Token: ${res.token}</p>`);
+      root.insertAdjacentHTML('beforeend', `<p>RefreshToken: ${res.refreshToken}</p>`);
     } else {
-      const res = await this.authService.signIn({ email: email.value, password: password.value });
-      if (res) {
-        const root = document.getElementById('root') as HTMLElement;
-        root.innerHTML = AppView.getAppImage();
-        root.insertAdjacentHTML('beforeend', `<p>Message: ${res.message}</p>`);
-        root.insertAdjacentHTML('beforeend', `<p>Name: ${res.name}</p>`);
-        root.insertAdjacentHTML('beforeend', `<p>UserId: ${res.userId}</p>`);
-        root.insertAdjacentHTML('beforeend', `<p>Token: ${res.token}</p>`);
-        root.insertAdjacentHTML('beforeend', `<p>RefreshToken: ${res.refreshToken}</p>`);
-      }
+      const incorrectInputs = document.querySelector('.incorrect-inputs') as HTMLElement;
+      incorrectInputs.classList.remove('hidden');
     }
   }
 
   private addEventListener() {
-    const submitButton = document.querySelector('.signIn-submit') as HTMLElement;
+    const submitButton = document.querySelector('.submit-button') as HTMLElement;
+    const email = document.getElementById('email') as HTMLInputElement;
+    const password = document.getElementById('password') as HTMLInputElement;
+
+    EmailValidation.emailValidation();
+    PasswordValidation.passwordValidation();
 
     submitButton.addEventListener('click', () => {
-      // eslint-disable-next-line no-void
-      void this.signIn().then();
+      if (email.classList.contains('valid') && password.classList.contains('valid')) {
+        // eslint-disable-next-line no-void
+        void this.signIn().then();
+      }
     });
   }
 }
