@@ -4,7 +4,7 @@ export default class EmailValidation {
 
     email.addEventListener('blur', () => {
       const invalidEmail = <HTMLElement>document.querySelector('.invalid-email');
-      if (email.value === '' || !email.value.slice(-10).includes('@gmail.com')) {
+      if (email.value.match(/\S+@\S+\.\S+/)) {
         email.classList.add('invalid');
         invalidEmail.classList.remove('hidden');
       }
@@ -13,7 +13,7 @@ export default class EmailValidation {
     email.addEventListener('input', (e) => {
       const invalidEmail = <HTMLElement>document.querySelector('.invalid-email');
       const target = <HTMLInputElement>e.target;
-      if (target.value !== '' && target.value.slice(-10).includes('@gmail.com')) {
+      if (target.value !== '' && target.value.match(/\S+@\S+\.\S+/)) {
         email.classList.remove('invalid');
         email.classList.add('valid');
         invalidEmail.classList.add('hidden');

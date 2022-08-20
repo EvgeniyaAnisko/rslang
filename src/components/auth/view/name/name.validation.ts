@@ -4,7 +4,7 @@ export default class NameValidation {
 
     name.addEventListener('blur', () => {
       const invalidEmail = <HTMLElement>document.querySelector('.invalid-name');
-      if (name.value === '') {
+      if (name.value.trim() === '') {
         name.classList.add('invalid');
         invalidEmail.classList.remove('hidden');
       }
@@ -13,7 +13,7 @@ export default class NameValidation {
     name.addEventListener('input', (e) => {
       const invalidEmail = <HTMLElement>document.querySelector('.invalid-name');
       const target = <HTMLInputElement>e.target;
-      if (target.value !== '') {
+      if (target.value.trim() !== '') {
         name.classList.remove('invalid');
         name.classList.add('valid');
         invalidEmail.classList.add('hidden');
