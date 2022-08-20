@@ -4,7 +4,7 @@ export default class EmailValidation {
 
     email.addEventListener('blur', () => {
       const invalidEmail = <HTMLElement>document.querySelector('.invalid-email');
-      if (email.value.match(/\S+@\S+\.\S+/)) {
+      if (!email.value.match(/\S+@\S+\.\S+/)) {
         email.classList.add('invalid');
         invalidEmail.classList.remove('hidden');
       }

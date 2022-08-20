@@ -5,29 +5,35 @@ import { ISignInResponse } from '../models/ISignInResponse';
 
 export default class AuthRepository {
   // SignUp
-  public signUp(data: ISignUp): Promise<ISignUp | null> {
-    return fetch(`${Endpoints.AppHost}/users`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json() as Promise<ISignUp>)
-      .catch(() => null);
+  public async signUp(data: ISignUp): Promise<ISignUp | null> {
+    try {
+      const res = await fetch(`${Endpoints.AppHost}/users`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      return await (<Promise<ISignUp>>res.json());
+    } catch {
+      return null;
+    }
   }
 
   // SignIn
-  public signIn(data: ISignIn): Promise<ISignInResponse | null> {
-    return fetch(`${Endpoints.AppHost}/signin`, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json() as Promise<ISignInResponse>)
-      .catch(() => null);
+  public async signIn(data: ISignIn): Promise<ISignInResponse | null> {
+    try {
+      const res = await fetch(`${Endpoints.AppHost}/signin`, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      return await (<Promise<ISignInResponse>>res.json());
+    } catch {
+      return null;
+    }
   }
 }
