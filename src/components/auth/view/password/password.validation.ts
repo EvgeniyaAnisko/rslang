@@ -1,9 +1,9 @@
 export default class PasswordValidation {
   public static passwordValidation() {
-    const password = document.getElementById('password') as HTMLInputElement;
+    const password = <HTMLInputElement>document.getElementById('password');
 
     password.addEventListener('blur', () => {
-      const invalidPassword = document.querySelector('.invalid-password') as HTMLElement;
+      const invalidPassword = <HTMLElement>document.querySelector('.invalid-password');
       if (password.value === '' || password.value.length < 8) {
         password.classList.add('invalid');
         invalidPassword.classList.remove('hidden');
@@ -11,8 +11,8 @@ export default class PasswordValidation {
     });
 
     password.addEventListener('input', (e) => {
-      const invalidPassword = document.querySelector('.invalid-password') as HTMLElement;
-      const target = e.target as HTMLInputElement;
+      const invalidPassword = <HTMLElement>document.querySelector('.invalid-password');
+      const target = <HTMLInputElement>e.target;
       if (target.value !== '' && target.value.length >= 8) {
         password.classList.remove('invalid');
         password.classList.add('valid');

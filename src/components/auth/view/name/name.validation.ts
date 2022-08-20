@@ -1,9 +1,9 @@
 export default class NameValidation {
   public static nameValidation() {
-    const name = document.getElementById('name') as HTMLInputElement;
+    const name = <HTMLInputElement>document.getElementById('name');
 
     name.addEventListener('blur', () => {
-      const invalidEmail = document.querySelector('.invalid-name') as HTMLElement;
+      const invalidEmail = <HTMLElement>document.querySelector('.invalid-name');
       if (name.value === '') {
         name.classList.add('invalid');
         invalidEmail.classList.remove('hidden');
@@ -11,8 +11,8 @@ export default class NameValidation {
     });
 
     name.addEventListener('input', (e) => {
-      const invalidEmail = document.querySelector('.invalid-name') as HTMLElement;
-      const target = e.target as HTMLInputElement;
+      const invalidEmail = <HTMLElement>document.querySelector('.invalid-name');
+      const target = <HTMLInputElement>e.target;
       if (target.value !== '') {
         name.classList.remove('invalid');
         name.classList.add('valid');

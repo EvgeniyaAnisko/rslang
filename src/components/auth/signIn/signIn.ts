@@ -18,31 +18,31 @@ export default class SignIn {
   }
 
   private renderSignIn(): void {
-    const root = document.getElementById('root') as HTMLElement;
+    const root = <HTMLElement>document.getElementById('root');
     root.innerHTML = SignInView.getSignInImage();
   }
 
   private async signIn(): Promise<void> {
-    const email = document.getElementById('email') as HTMLInputElement;
-    const password = document.getElementById('password') as HTMLInputElement;
+    const email = <HTMLInputElement>document.getElementById('email');
+    const password = <HTMLInputElement>document.getElementById('password');
 
     const res = await this.authService.signIn({ email: email.value, password: password.value });
     if (res) {
       localStorage.setItem('token', res.token);
-      const root = document.getElementById('root') as HTMLElement;
+      const root = <HTMLElement>document.getElementById('root');
       root.innerHTML = '';
       root.insertAdjacentHTML('beforeend', `<div>${LogOutButton.getLogOutButtonImage()}</div>`);
       root.insertAdjacentHTML('beforeend', '<h3>Welcome to App</h3>');
     } else {
-      const incorrectInputs = document.querySelector('.incorrect-inputs') as HTMLElement;
+      const incorrectInputs = <HTMLElement>document.querySelector('.incorrect-inputs');
       incorrectInputs.classList.remove('hidden');
     }
   }
 
   private addEventListener() {
-    const submitButton = document.querySelector('.submit-button') as HTMLElement;
-    const email = document.getElementById('email') as HTMLInputElement;
-    const password = document.getElementById('password') as HTMLInputElement;
+    const submitButton = <HTMLElement>document.querySelector('.submit-button');
+    const email = <HTMLInputElement>document.getElementById('email');
+    const password = <HTMLInputElement>document.getElementById('password');
 
     EmailValidation.emailValidation();
     PasswordValidation.passwordValidation();

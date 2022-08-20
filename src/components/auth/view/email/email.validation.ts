@@ -1,9 +1,9 @@
 export default class EmailValidation {
   public static emailValidation() {
-    const email = document.getElementById('email') as HTMLInputElement;
+    const email = <HTMLInputElement>document.getElementById('email');
 
     email.addEventListener('blur', () => {
-      const invalidEmail = document.querySelector('.invalid-email') as HTMLElement;
+      const invalidEmail = <HTMLElement>document.querySelector('.invalid-email');
       if (email.value === '' || !email.value.slice(-10).includes('@gmail.com')) {
         email.classList.add('invalid');
         invalidEmail.classList.remove('hidden');
@@ -11,8 +11,8 @@ export default class EmailValidation {
     });
 
     email.addEventListener('input', (e) => {
-      const invalidEmail = document.querySelector('.invalid-email') as HTMLElement;
-      const target = e.target as HTMLInputElement;
+      const invalidEmail = <HTMLElement>document.querySelector('.invalid-email');
+      const target = <HTMLInputElement>e.target;
       if (target.value !== '' && target.value.slice(-10).includes('@gmail.com')) {
         email.classList.remove('invalid');
         email.classList.add('valid');

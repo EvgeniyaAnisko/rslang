@@ -3,7 +3,6 @@ import AuthService from '../../../core/services/auth/auth.service';
 import EmailValidation from '../view/email/email.validation';
 import PasswordValidation from '../view/password/password.validation';
 import NameValidation from '../view/name/name.validation';
-import SignInButton from '../../app/view/signIn/signInButton';
 
 export default class SignUp {
   private authService: AuthService;
@@ -18,14 +17,14 @@ export default class SignUp {
   }
 
   private renderSignUp(): void {
-    const root = document.getElementById('root') as HTMLElement;
+    const root = <HTMLElement>document.getElementById('root');
     root.innerHTML = SignUpView.getSignUpImage();
   }
 
   private async signUp(): Promise<void> {
-    const name = document.getElementById('name') as HTMLInputElement;
-    const email = document.getElementById('email') as HTMLInputElement;
-    const password = document.getElementById('password') as HTMLInputElement;
+    const name = <HTMLInputElement>document.getElementById('name');
+    const email = <HTMLInputElement>document.getElementById('email');
+    const password = <HTMLInputElement>document.getElementById('password');
 
     const res = await this.authService.signUp({
       name: name.value,
@@ -33,20 +32,20 @@ export default class SignUp {
       password: password.value,
     });
     if (res) {
-      const root = document.getElementById('root') as HTMLElement;
+      const root = <HTMLElement>document.getElementById('root');
       root.innerHTML = '';
       root.insertAdjacentHTML('beforeend', '<h4>You successfully registered. SignIn to the App</h4>');
     } else {
-      const incorrectInputs = document.querySelector('.incorrect-inputs') as HTMLElement;
+      const incorrectInputs = <HTMLElement>document.querySelector('.incorrect-inputs');
       incorrectInputs.classList.remove('hidden');
     }
   }
 
   private addEventListener() {
-    const submitButton = document.querySelector('.submit-button') as HTMLElement;
-    const name = document.getElementById('name') as HTMLInputElement;
-    const email = document.getElementById('email') as HTMLInputElement;
-    const password = document.getElementById('password') as HTMLInputElement;
+    const submitButton = <HTMLElement>document.querySelector('.submit-button');
+    const name = <HTMLInputElement>document.getElementById('name');
+    const email = <HTMLInputElement>document.getElementById('email');
+    const password = <HTMLInputElement>document.getElementById('password');
 
     NameValidation.nameValidation();
     EmailValidation.emailValidation();

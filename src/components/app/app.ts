@@ -9,26 +9,26 @@ export default class App {
   }
 
   public renderApp(): void {
-    const root = document.getElementById('root') as HTMLElement;
+    const root = <HTMLElement>document.getElementById('root');
     root.innerHTML = AppView.getAppImage();
   }
 
   public addEventListener() {
     // Click SignUp button
-    (document.querySelector('.signUp-button') as HTMLElement).addEventListener('click', () => {
+    (<HTMLElement>document.querySelector('.signUp-button')).addEventListener('click', () => {
       const signUp = new SignUp();
       signUp.init();
     });
 
     // Click SignIn button
-    (document.querySelector('.signIn-button') as HTMLElement).addEventListener('click', () => {
+    (<HTMLElement>document.querySelector('.signIn-button')).addEventListener('click', () => {
       const signIn = new SignIn();
       signIn.init();
     });
 
     // Click LogOut button
     document.addEventListener('click', (e) => {
-      const target = e.target as HTMLElement;
+      const target = <HTMLElement>e.target;
       if (target.classList.contains('logOut-button')) {
         localStorage.removeItem('token');
         this.init();
