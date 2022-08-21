@@ -1,2 +1,2 @@
-export * from "./words.repository";
-export * from "./words.service";
+export * from './words.repository';
+export * from './words.service';

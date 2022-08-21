@@ -1,1 +1,1 @@
-export * from "./word.model";
+export * from './word.model';

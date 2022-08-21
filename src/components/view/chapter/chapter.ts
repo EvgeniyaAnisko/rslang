@@ -4,6 +4,6 @@ export abstract class ChapterView {
     <li class="app-words__menu-item">
       ${title}
     </li>
-    `
+    `;
   }
 }

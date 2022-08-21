@@ -1,6 +1,5 @@
-import { IWord } from "../models";
-import { WordsRepository } from "./words.repository";
-
+import { IWord } from '../models';
+import { WordsRepository } from './words.repository';
 
 // words service
 export class WordsService {
