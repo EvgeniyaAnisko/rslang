@@ -1,4 +1,4 @@
-import MainView from '../../pages/main/main.view';
+import MainView from '../../pages/main.view';
 
 export default class App {
   public init(): void {

@@ -1,0 +1,30 @@
+#about-page{
+  background: #10b582;
+  color: #fdfdfd;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.authors-wrapper{
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.wrapper-author{
+  gap: 20px;
+  display: flex;
+}
+
+.author-image > img{
+  width: 20vh;
+  height: 20vh;
+}
+/* 
+.author-link{
+} */

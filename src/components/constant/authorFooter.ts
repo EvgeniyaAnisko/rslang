@@ -1,4 +1,16 @@
-const authors = `<div class="footer-container">
+/* eslint-disable @typescript-eslint/comma-dangle */
+import authors from './authorInfo';
+
+const temp = authors
+  .map(
+    (item): string => `
+    <li class="footer-item">
+      <a class="footer-link" href="https://github.com/${item.github}">${item.name}</a>
+    </li>`
+  )
+  .join('');
+
+const authorsFooter = `<div class="footer-container">
 <div class="footer-list">
     <a class="footer-link" href="https://rs.school/">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="242" height="inherit" viewBox="0 0 242 90">
@@ -8,15 +20,7 @@ const authors = `<div class="footer-container">
     </a>
 </div>
 <ul class="footer-list authors">
-    <li class="footer-item">
-      <a class="footer-link" href="https://github.com/EvgeniyaAnisko">Yauheniya Aniska</a>
-    </li>
-    <li class="footer-item">
-      <a class="footer-link" href="https://github.com/Hakimbek">Hakimbek Bharamov</a>
-    </li>
-    <li class="footer-item">
-      <a class="footer-link" href="https://github.com/Albinous">Albina Kadyrzhanova</a>
-    </li>
+  ${temp}
 </ul>
 <div class="footer-list">
     <p class="footer-item">
@@ -25,4 +29,4 @@ const authors = `<div class="footer-container">
 </div>
 </div>`;
 
-export default authors;
+export default authorsFooter;
