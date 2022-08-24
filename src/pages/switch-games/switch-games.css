@@ -1,0 +1,44 @@
+#switch-games-page {
+  background: #10b582;
+  color: #fdfdfd;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-evenly;
+  flex-direction: column;
+  /* padding: 20px; */
+}
+
+h1 {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 58px;
+  line-height: 120%;
+  text-align: center;
+  color: #FDFDFD;
+}
+
+.switch-game-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 25vh;
+  margin: 0 20vw 0 auto;
+}
+
+.switch-game-wrapper:last-child {
+  margin: 0 auto 0 20vw;
+}
+
+.switch-games-page__title {
+  text-align: center;
+}
+
+.switch-games-page__image > svg:hover{
+  fill: #FA9F42 !important;
+}
+
+.switch-games-page__image > svg{
+  transition: 0.5s;
+}

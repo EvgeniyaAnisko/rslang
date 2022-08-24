@@ -1,3 +1,4 @@
+import MainView from '../../pages/main.view';
 import { AppView } from './app.view';
 import { SignUp, SignIn } from '../auth';
 
@@ -10,6 +11,9 @@ export class App {
   public renderApp(): void {
     const root = <HTMLElement>document.getElementById('root');
     root.innerHTML = AppView.getAppImage();
+    
+    const mainView = new MainView();
+    mainView.render();
   }
 
   public addEventListener() {
