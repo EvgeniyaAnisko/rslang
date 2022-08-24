@@ -1,0 +1,44 @@
+.email-wrapper {
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+}
+
+.email-label {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.email {
+    width: 300px;
+    height: 30px;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+}
+
+.email:focus {
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.invalid-email {
+    margin: 5px 0 2px 0;
+    font-size: 15px;
+    color: crimson;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.invalid {
+    border: 1px solid crimson;
+}
+
+.valid {
+    border: 1px solid seagreen;
+}

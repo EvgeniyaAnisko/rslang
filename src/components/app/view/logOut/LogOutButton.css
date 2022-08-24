@@ -1,0 +1,21 @@
+.logOut-button {
+    width: 150px;
+    height: 30px;
+    border: none;
+    background-color: crimson;
+    color: white;
+    font-size: 18px;
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.logOut-button:hover {
+    background: #c91337;
+}
+
+.logOut-button:focus {
+    border-color: crimson;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(240,168,175, 0.25);
+}
