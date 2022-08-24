@@ -1,6 +1,5 @@
-import { Words } from './components';
+import { Words, App } from './components';
 import { WordsRepository, WordsService } from './core';
-import { App } from './components';
 
 const words = new Words(new WordsService(new WordsRepository()));
 

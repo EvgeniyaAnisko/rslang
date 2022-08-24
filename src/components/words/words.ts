@@ -25,7 +25,6 @@ export class Words {
     const IWords: Array<IWord> = await this.wordsService.getWords(this.page, this.group);
     const words: Array<Word> = IWords.map((word) => new Word(word));
     this.words = [...words];
-    console.log(this.words);
   }
 
   private renderWord(): void {

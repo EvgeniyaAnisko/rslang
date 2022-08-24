@@ -23,6 +23,30 @@ export class Word {
     } else {
       // Or create a new one
       root?.insertAdjacentHTML('beforeend', `<div class="app-word" id="${this.word.id}">${template}</div>`);
+      this.addEventListeners();
     }
+  }
+
+  private addEventListeners(): void {
+    const container: HTMLElement | null = document.getElementById(`${this.word.id}`);
+    const audio = <HTMLMediaElement>document.querySelector('.app-word__audio');
+    const audioMeaning = <HTMLMediaElement>document.querySelector('.app-word__audio-meaning');
+    const audioExample = <HTMLMediaElement>document.querySelector('.app-word__audio-example');
+
+    container?.addEventListener('click', (event) => {
+      const isAudio = (<SVGSVGElement>event.target).classList.contains('app-word__audio-svg');
+      console.log(isAudio);
+
+      if (isAudio) {
+        audio.currentTime = 0;
+        audio.play();
+        setTimeout(() => {
+          audioMeaning.play();
+        }, audio.duration * 1000);
+        setTimeout(() => {
+          audioExample.play();
+        }, audio.duration * 1000 + audioMeaning.duration * 1000);
+      }
+    });
   }
 }
