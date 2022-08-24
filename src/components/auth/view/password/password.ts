@@ -1,6 +1,6 @@
 import './password.css';
 
-export default abstract class Password {
+export abstract class Password {
   public static getPasswordImage() {
     return `
            <div class="password-wrapper">

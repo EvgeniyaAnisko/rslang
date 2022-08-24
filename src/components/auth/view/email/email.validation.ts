@@ -1,4 +1,4 @@
-export default class EmailValidation {
+export class EmailValidation {
   public static emailValidation() {
     const email = <HTMLInputElement>document.getElementById('email');
 

@@ -1,8 +1,6 @@
-import Email from '../view/email/email';
-import Password from '../view/password/password';
-import Submit from '../view/submit/submit';
+import { Email, Password, Submit } from '../view';
 
-export default abstract class SignInView {
+export abstract class SignInView {
   public static getSignInImage(): string {
     return `
         <div class="signIn-wrapper">

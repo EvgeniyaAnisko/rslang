@@ -1,9 +1,7 @@
-import { ISignUp } from '../models/ISignUp';
-import { ISignIn } from '../models/ISignIn';
-import Endpoints from '../../constants';
-import { ISignInResponse } from '../models/ISignInResponse';
+import { ISignUp, ISignIn, ISignInResponse } from '../models';
+import { Endpoints } from '../../constants';
 
-export default class AuthRepository {
+export class AuthRepository {
   // SignUp
   public async signUp(data: ISignUp): Promise<ISignUp | null> {
     try {

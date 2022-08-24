@@ -1,6 +1,6 @@
 import './name.css';
 
-export default abstract class Name {
+export abstract class Name {
   public static getNameImage() {
     return `
         <div class="name-wrapper">

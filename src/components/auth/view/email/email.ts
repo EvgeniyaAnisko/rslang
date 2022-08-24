@@ -1,6 +1,6 @@
 import './email.css';
 
-export default abstract class Email {
+export abstract class Email {
   public static getEmailImage() {
     return `
             <div class="email-wrapper">

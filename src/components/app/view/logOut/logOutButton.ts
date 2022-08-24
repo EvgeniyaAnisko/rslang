@@ -1,6 +1,6 @@
 import './LogOutButton.css';
 
-export default class LogOutButton {
+export class LogOutButton {
   public static getLogOutButtonImage() {
     return `
         <div>

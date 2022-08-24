@@ -1,6 +1,6 @@
 import './submit.css';
 
-export default abstract class Submit {
+export abstract class Submit {
   public static getSubmitButtonImage() {
     return `
              <div class="submit-wrapper">

@@ -1,10 +1,8 @@
-import SignUpView from './signUp.view';
-import AuthService from '../../../core/services/auth/auth.service';
-import EmailValidation from '../view/email/email.validation';
-import PasswordValidation from '../view/password/password.validation';
-import NameValidation from '../view/name/name.validation';
+import { SignUpView } from './signUp.view';
+import { AuthService } from '../../../core';
+import { EmailValidation, PasswordValidation, NameValidation } from '../view';
 
-export default class SignUp {
+export class SignUp {
   private authService: AuthService;
 
   constructor() {

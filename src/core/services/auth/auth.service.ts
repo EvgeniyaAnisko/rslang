@@ -1,8 +1,7 @@
-import AuthRepository from './auth.repository';
-import { ISignUp } from '../models/ISignUp';
-import { ISignIn } from '../models/ISignIn';
+import { AuthRepository } from './auth.repository';
+import { ISignUp, ISignIn } from '../models';
 
-export default class AuthService {
+export class AuthService {
   private authRepository: AuthRepository;
 
   constructor() {

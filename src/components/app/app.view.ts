@@ -1,8 +1,7 @@
-import SignInButton from './view/signIn/signInButton';
-import SignUpButton from './view/signUp/signUpButton';
+import { SignInButton, SignUpButton } from './view';
 import './app.css';
 
-export default abstract class AppView {
+export abstract class AppView {
   public static getAppImage(): string {
     return `
         <div id="app">

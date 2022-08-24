@@ -1,4 +1,4 @@
-export default class PasswordValidation {
+export class PasswordValidation {
   public static passwordValidation() {
     const password = <HTMLInputElement>document.getElementById('password');
 

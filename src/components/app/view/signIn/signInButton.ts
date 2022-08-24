@@ -1,6 +1,6 @@
 import './signInButton.css';
 
-export default class SignInButton {
+export class SignInButton {
   public static getSignInButtonImage() {
     return `
         <div>

@@ -1,11 +1,10 @@
-import SignInView from './signIn.view';
-import AuthService from '../../../core/services/auth/auth.service';
-import EmailValidation from '../view/email/email.validation';
-import PasswordValidation from '../view/password/password.validation';
-import LogOutButton from '../../app/view/logOut/logOutButton';
+import { SignInView } from './signIn.view';
+import { AuthService } from '../../../core';
+import { EmailValidation, PasswordValidation } from '../view';
+import { LogOutButton } from '../../app';
 import './signIn.css';
 
-export default class SignIn {
+export class SignIn {
   private authService: AuthService;
 
   constructor() {

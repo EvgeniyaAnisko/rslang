@@ -1,10 +1,7 @@
-import Name from '../view/name/name';
-import Email from '../view/email/email';
-import Password from '../view/password/password';
-import Submit from '../view/submit/submit';
+import { Name, Email, Password, Submit } from '../view';
 import './signUp.css';
 
-export default abstract class SignUpView {
+export abstract class SignUpView {
   public static getSignUpImage(): string {
     return `
         <div class="signUp-wrapper">

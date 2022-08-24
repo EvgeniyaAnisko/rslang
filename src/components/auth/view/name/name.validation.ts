@@ -1,4 +1,4 @@
-export default class NameValidation {
+export class NameValidation {
   public static nameValidation() {
     const name = <HTMLInputElement>document.getElementById('name');
 

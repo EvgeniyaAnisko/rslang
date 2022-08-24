@@ -1,8 +1,7 @@
-import AppView from './app.view';
-import SignUp from '../auth/signUp/signUp';
-import SignIn from '../auth/signIn/signIn';
+import { AppView } from './app.view';
+import { SignUp, SignIn } from '../auth';
 
-export default class App {
+export class App {
   public init(): void {
     this.renderApp();
     this.addEventListener();
