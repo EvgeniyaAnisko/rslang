@@ -1,7 +1,7 @@
 {
     "plugins": [
         "prettier", 
-        "import",
+        // "import",
         "@typescript-eslint"
     ],
     "extends": [
@@ -27,18 +27,22 @@
     "root": true,
     "rules": {
         "no-debugger": "off",
-        "no-console": 0,
+        "no-console": "off",
         "class-methods-use-this": "off",
-        "@typescript-eslint/no-explicit-any": "error",
+        // "@typescript-eslint/no-explicit-any": "error",
         "@typescript-eslint/no-unused-vars": ["error", { "args": "none"}],
         "prettier/prettier": [
             "error", 
             { "endOfLine": "auto" } 
         ],
-        "linebreak-style": 0,
+        "linebreak-style": "off",
         "indent": "off",
-        "@typescript-eslint/indent": 0,
-        "@typescript-eslint/keyword-spacing": ["off"]
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/keyword-spacing": ["off"],
+        "import/prefer-default-export": "off",
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
+        "max-len": ["warn", { "code": 140 }]
     }
     
 }
