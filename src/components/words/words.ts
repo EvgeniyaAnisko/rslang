@@ -36,6 +36,6 @@ export class Words {
     const root: HTMLElement | null = document.getElementById('root');
     const template: string = WordsView.getWordsImage();
 
-    (root as HTMLElement).innerHTML = template;
+    if (root) root.innerHTML = template;
   }
 }

@@ -1,4 +1,4 @@
-import { IWord } from '../../core';
+import { IWord, Endpoints } from '../../core';
 
 export abstract class WordView {
   public static getWordImage(wordObj: IWord): string {
@@ -13,7 +13,7 @@ export abstract class WordView {
       textExampleTranslate,
     } = wordObj;
     return `
-      <img src="${image}" alt="" class="app-word__img">
+    <img src="${Endpoints.AppHost}/${image}" alt="" class="app-word__img">
       <h3 class="app-word__title">${word}</h3>
       <h4 class="app-word__translate">${wordTranslate}</h4>
       <h4 class="app-word__transcription">${transcription}</h4>
