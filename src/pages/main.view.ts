@@ -1,13 +1,11 @@
-import newComponent from '../components/base-components/base-components';
-import authorsFooter from '../components/constant/authorFooter';
-import links from '../components/constant/nav-link';
-import AboutPageView from './about/about.view';
-import AuthPageView from './auth/auth.view';
+import { newComponent, links, authorsFooter } from '../components';
+import { AboutPageView } from './about';
+import { AuthPageView } from './auth';
 import './main.css';
-import StartPageView from './start/start.view';
-import StatisticPageView from './statistic/statistic.view';
-import SwitchGamesPageView from './switch-games/switch-games.view';
-import VocabularyPageView from './vocabulary/vocabulary.view';
+import { StartPageView } from './start';
+import { StatisticPageView } from './statistic';
+import { SwitchGamesPageView } from './switch-games';
+import { VocabularyPageView } from './vocabulary';
 
 export default class MainView {
   header: HTMLElement;

@@ -1,6 +1,6 @@
-import IAuthor from './IAuthor';
+import { IAuthor } from './IAuthor';
 
-const authors: Array<IAuthor> = [
+export const authors: Array<IAuthor> = [
   {
     name: 'Yauheniya Aniska',
     github: 'EvgeniyaAnisko',
@@ -23,5 +23,3 @@ const authors: Array<IAuthor> = [
     role: 'Frontend developer',
   },
 ];
-
-export default authors;

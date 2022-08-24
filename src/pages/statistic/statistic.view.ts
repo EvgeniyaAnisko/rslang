@@ -1,7 +1,7 @@
-import newComponent from '../../components/base-components/base-components';
+import { newComponent } from '../../components';
 import './statistic.css';
 
-export default class StatisticPageView {
+export class StatisticPageView {
   root: HTMLElement;
 
   constructor() {

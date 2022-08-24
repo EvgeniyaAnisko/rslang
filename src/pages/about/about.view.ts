@@ -1,9 +1,8 @@
-import newComponent from '../../components/base-components/base-components';
-import authors from '../../components/constant/authorInfo';
+import { generateAuthorCard } from '..';
+import { authors, newComponent } from '../../components';
 import './about.css';
-import generateAuthorCard from './about.person';
 
-export default class AboutPageView {
+export class AboutPageView {
   root: HTMLElement;
 
   constructor() {

@@ -1,7 +1,7 @@
-import newComponent from '../../components/base-components/base-components';
+import { newComponent } from '../../components';
 import './auth.css';
 
-export default class AuthPageView {
+export class AuthPageView {
   root: HTMLElement;
 
   constructor() {

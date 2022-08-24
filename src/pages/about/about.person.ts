@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/comma-dangle */
-import newComponent from '../../components/base-components/base-components';
-import IAuthor from '../../components/constant/IAuthor';
 
-export default function generateAuthorCard(author: IAuthor): HTMLElement {
+import { IAuthor, newComponent } from '../../components';
+
+export function generateAuthorCard(author: IAuthor): HTMLElement {
   const authorWrapper = newComponent('div', '', ['wrapper-author']);
   const authorName = newComponent('h2', author.name, ['author-name']);
   const authorImage = newComponent(

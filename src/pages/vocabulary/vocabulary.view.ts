@@ -1,7 +1,7 @@
-import newComponent from '../../components/base-components/base-components';
+import { newComponent } from '../../components/base-components/base-components';
 import './vocabulary.css';
 
-export default class VocabularyPageView {
+export class VocabularyPageView {
   root: HTMLElement;
 
   constructor() {

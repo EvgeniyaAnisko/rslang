@@ -1,6 +1,6 @@
 import MainView from '../../pages/main.view';
 
-export default class App {
+export class App {
   public init(): void {
     this.renderApp();
   }

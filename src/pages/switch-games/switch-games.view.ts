@@ -1,9 +1,9 @@
-import newComponent from '../../components/base-components/base-components';
-import audioSVG from './audio-svg';
-import sprintSVG from './sprint-svg';
+import { newComponent } from '../../components/base-components/base-components';
+import { audioSVG } from './audio-svg';
+import { sprintSVG } from './sprint-svg';
 import './switch-games.css';
 
-export default class SwitchGamesPageView {
+export class SwitchGamesPageView {
   root: HTMLElement;
 
   constructor() {

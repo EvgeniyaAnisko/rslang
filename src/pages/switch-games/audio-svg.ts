@@ -1,4 +1,4 @@
-const audioSVG = (color: string): string => `
+export const audioSVG = (color: string): string => `
 <?xml version="1.0" standalone="no"?>
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" fill=${color}
 viewBox="0 0 1280.000000 1064.000000"
@@ -124,5 +124,3 @@ c-46 -4 -49 4 -49 168 0 159 -17 447 -29 499 -5 22 -16 47 -25 56 -9 9 -16 33
 -323 1472 -852 2018 -189 195 -438 396 -615 495 l-50 28 0 -2636z"/>
 </g>
 </svg>`;
-
-export default audioSVG;

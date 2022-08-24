@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/comma-dangle */
-import authors from './authorInfo';
+/* eslint-disable max-len */
+import { authors } from './authorInfo';
 
-const temp = authors
+const generateLinks = authors
   .map(
     (item): string => `
     <li class="footer-item">
@@ -10,7 +11,7 @@ const temp = authors
   )
   .join('');
 
-const authorsFooter = `<div class="footer-container">
+export const authorsFooter = `<div class="footer-container">
 <div class="footer-list">
     <a class="footer-link" href="https://rs.school/">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="242" height="inherit" viewBox="0 0 242 90">
@@ -20,7 +21,7 @@ const authorsFooter = `<div class="footer-container">
     </a>
 </div>
 <ul class="footer-list authors">
-  ${temp}
+  ${generateLinks}
 </ul>
 <div class="footer-list">
     <p class="footer-item">
@@ -28,5 +29,3 @@ const authorsFooter = `<div class="footer-container">
     </p>
 </div>
 </div>`;
-
-export default authorsFooter;

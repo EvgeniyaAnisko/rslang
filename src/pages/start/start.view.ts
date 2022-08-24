@@ -1,8 +1,7 @@
-import newComponent from '../../components/base-components/base-components';
-import createButton from '../../components/base-components/button/button';
+import { createButton, newComponent } from '../../components/base-components';
 import './start.css';
 
-export default class StartPageView {
+export class StartPageView {
   root: HTMLElement;
 
   constructor() {
