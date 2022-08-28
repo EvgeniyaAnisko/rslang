@@ -5,3 +5,4 @@ export * from './view';
 export * from './word';
 export * from './words';
 export * from './auth';
+export * from './pagination';

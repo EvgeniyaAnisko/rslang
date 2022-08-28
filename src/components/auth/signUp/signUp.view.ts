@@ -1,5 +1,6 @@
-import { Name, Email, Password, Submit } from '../view';
+/* eslint-disable object-curly-newline */
 import './signUp.css';
+import { Name, Email, Password, Submit } from '../view';
 
 export abstract class SignUpView {
   public static getSignUpImage(): string {

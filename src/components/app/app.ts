@@ -9,11 +9,11 @@ export class App {
   }
 
   public renderApp(): void {
-    const root = <HTMLElement>document.getElementById('root');
-    root.innerHTML = AppView.getAppImage();
-    
     const mainView = new MainView();
     mainView.render();
+
+    const root = <HTMLElement>document.getElementById('auth-page');
+    root.insertAdjacentHTML('beforeend', AppView.getAppImage());
   }
 
   public addEventListener() {

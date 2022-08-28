@@ -10,10 +10,17 @@ html {
   display: flex;
   width: 100%;
   justify-content: center;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
-body {
+body{
+  width: inherit;
+  display: flex;
+  justify-content: center;
+}
+
+/* body { */
+#root {
   background-color: #e5e5e5;
   max-width: 1920px;
   display: flex;
@@ -41,7 +48,7 @@ footer {
 }
 
 .page {
-  height: 80vh;
+  min-height: 80vh;
   padding-top: 10vh;
 }
 
@@ -74,7 +81,7 @@ footer {
 }
 
 .nav-item:hover,
-.nav-item:active,
+.nav-link.active,
 .footer-link:hover {
   border-bottom: 2px dashed #FA9F42;
 }
@@ -129,16 +136,3 @@ footer {
   height: calc(100% - 90px);
   position: relative;
 } */
-
-.next-page {
-  position: sticky;
-  writing-mode: vertical-rl;
-  margin: 0 10px 0 auto;
-  bottom: 110px;
-  font-family: 'Raleway Medium', arial;
-  color: #fdfdfd;
-}
-
-.next-page::after {
-  content: '    →';
-}
