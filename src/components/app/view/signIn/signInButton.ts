@@ -4,7 +4,7 @@ export class SignInButton {
   public static getSignInButtonImage() {
     return `
         <div>
-            <button class="signIn-button">SignIn</button>
+            <button id="signInButton" class="signIn-button">SignIn</button>
         </div>
         `;
   }
