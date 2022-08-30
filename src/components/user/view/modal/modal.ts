@@ -45,6 +45,10 @@ export class Modal {
         // eslint-disable-next-line no-void
         void this.edit();
         cancel.click();
+      } else {
+        email.focus();
+        password.focus();
+        password.blur();
       }
     });
   }

@@ -64,6 +64,11 @@ export class SignUp {
           // eslint-disable-next-line no-void
           void this.signUp().then();
         }
+      } else {
+        name.focus();
+        email.focus();
+        password.focus();
+        password.blur();
       }
     });
   }

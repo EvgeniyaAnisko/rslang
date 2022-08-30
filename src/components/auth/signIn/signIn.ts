@@ -61,6 +61,10 @@ export class SignIn {
       if (email.classList.contains('valid') && password.classList.contains('valid')) {
         // eslint-disable-next-line no-void
         void this.signIn().then();
+      } else {
+        email.focus();
+        password.focus();
+        password.blur();
       }
     });
   }
