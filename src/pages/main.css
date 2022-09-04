@@ -13,7 +13,7 @@ html {
   /* scroll-behavior: smooth; */
 }
 
-body{
+body {
   width: inherit;
   display: flex;
   justify-content: center;

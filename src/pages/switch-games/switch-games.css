@@ -42,3 +42,9 @@ h1 {
 .switch-games-page__image > svg{
   transition: 0.5s;
 }
+
+.levels-wrapper{
+  flex-direction: row;
+  margin: 0;
+  justify-content: center;
+}
