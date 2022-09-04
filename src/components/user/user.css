@@ -1,0 +1,46 @@
+.user-wrapper {
+    /*width: 800px;*/
+}
+
+.user-title {
+    font-size: 40px;
+    color: #10B582;
+}
+
+.title-name {
+    color: #FA9F42;
+    font-weight: bold;
+}
+
+.user-body {
+    margin-top: 100px;
+}
+
+.user-name,
+.user-email {
+    font-size: 30px;
+    margin: 30px 0 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-title,
+.email-title {
+    font-weight: bold;
+    color: #FA9F42;
+}
+
+.email-text,
+.name-text {
+    color: #10B582;
+}
+
+.user-hr {
+    border: 1px solid #FA9F42;
+}
+
+.user-buttons {
+    margin-top: 100px;
+    display: flex;
+    justify-content: end;
+}
