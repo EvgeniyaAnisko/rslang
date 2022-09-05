@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable prettier/prettier */
 import { SignUpView } from './signUp.view';
 import { AuthService } from '../../../core';
 import { EmailValidation, PasswordValidation, NameValidation } from '../view';

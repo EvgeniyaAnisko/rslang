@@ -4,6 +4,7 @@
 * {
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 html {
@@ -23,6 +24,7 @@ body {
 #root {
   background-color: #e5e5e5;
   max-width: 1920px;
+  width: 100vw;
   display: flex;
   min-height: 100vh;
   width: inherit;
@@ -47,19 +49,24 @@ header {
   top: 0;
   z-index: 2;
   height: 10vh;
+  width: 100vw;
+  font-size: 2vw;
 }
 
 footer {
   bottom: 0;
-  width: inherit;
+  width: 100vw;
   position: fixed;
   max-width: 1920px;
   height: 10vh;
+  flex-wrap: nowrap;
 }
 
 .page {
   min-height: 80vh;
   padding-top: 10vh;
+  width: 100vw;
+  max-width: 1920px;
 }
 
 .nav-wrapper {
@@ -75,7 +82,7 @@ footer {
 .nav-list {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 90%;
   align-items: center;
 }
 
@@ -87,7 +94,6 @@ footer {
   cursor: pointer;
   padding: 10px 0;
   color: #fdfdfd;
-  /* border-bottom: 2px dashed #10B582; */
 }
 
 .nav-link{
@@ -110,6 +116,8 @@ footer {
   height: inherit;
   gap: 20px;
   padding: 0 20px;
+  flex-wrap: nowrap;
+  font-size: 2vw;
 }
 
 .footer-item,
@@ -141,7 +149,8 @@ footer {
   align-items: center;
 }
 
-/* main{
-  height: calc(100% - 90px);
-  position: relative;
-} */
+@media (max-width: 400px) {
+  .app-word > img{
+    width: 100%;
+  }
+}

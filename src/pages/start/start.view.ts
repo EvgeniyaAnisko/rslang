@@ -1,4 +1,4 @@
-import { createButton, newComponent } from '../../components/base-components';
+import { createButton, newAnchorComponent, newComponent } from '../../components/base-components';
 import './start.css';
 
 export class StartPageView {
@@ -12,11 +12,13 @@ export class StartPageView {
   render(): HTMLElement {
     const title = newComponent('h1', 'RS Lang');
     const about = newComponent('h2', 'Начни изучение английского');
+    const link = newAnchorComponent('', '#auth-page');
     const button = createButton('Присоединиться');
 
     this.root.appendChild(title);
     this.root.appendChild(about);
-    this.root.appendChild(button);
+    link.appendChild(button);
+    this.root.appendChild(link);
     return this.root;
   }
 }

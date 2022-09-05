@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { SignInView } from './signIn.view';
 import { AuthService } from '../../../core';
 import { EmailValidation, PasswordValidation } from '../view';
