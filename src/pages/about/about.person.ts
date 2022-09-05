@@ -7,7 +7,7 @@ export function generateAuthorCard(author: IAuthor): HTMLElement {
   const authorName = newComponent('h2', author.name, ['author-name']);
   const authorImage = newComponent(
     'div',
-    `<img src="./src/assets/photo/${author.github}.svg" alt="${author.github}">`,
+    `<img src="./src/assets/photo/${author.github}.png" alt="${author.github}">`,
     ['author-image']
   );
   const authorRole = newComponent('h3', author.role, ['author-role']);

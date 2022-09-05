@@ -9,6 +9,8 @@
   transition: 0.5s;
   text-decoration: none;
   padding: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0 20px;
 }
 
 .next-page::after {
@@ -26,6 +28,8 @@
   transition: 0.5s;
   text-decoration: none;
   padding: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0px 20px;
 }
 
 .prev-page::before {
@@ -36,6 +40,5 @@
 .next-page:hover{
   /* color: #FA9F42; */
   background: #FA9F42;
-  border-radius: 0px 20px;
   transition: 0.5s;
 }

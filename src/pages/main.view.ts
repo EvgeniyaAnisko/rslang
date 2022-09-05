@@ -23,10 +23,6 @@ export default class MainView {
     document.getElementById('root')?.appendChild(this.header);
     document.getElementById('root')?.appendChild(this.main);
     document.getElementById('root')?.appendChild(this.footer);
-
-    // document.body.appendChild(this.header);
-    // document.body.appendChild(this.main);
-    // document.body.appendChild(this.footer);
   }
 
   render() {
