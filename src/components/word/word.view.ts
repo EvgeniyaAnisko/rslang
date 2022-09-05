@@ -32,7 +32,7 @@ export abstract class WordView {
 
       <audio class="audio app-word__audio" src="${Endpoints.AppHost}/${audio}"></audio>
       <audio class="audio app-word__audio-meaning" src="${Endpoints.AppHost}/${audioMeaning}"></audio>
-      <audio class="audio app-word__audio-example" preload="auto" autobuffer controls src="${Endpoints.AppHost}/${audioExample}"></audio>
+      <audio class="audio app-word__audio-example" src="${Endpoints.AppHost}/${audioExample}"></audio>
     `;
   }
 }

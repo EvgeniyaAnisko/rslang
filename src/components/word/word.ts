@@ -12,6 +12,12 @@ export class Word {
     return this.word.id;
   }
 
+  public updateWord(word: IWord): Word {
+    this.word = word;
+    this.render(word);
+    return this;
+  }
+
   public render(word?: IWord): void {
     const root: HTMLElement | null = document.querySelector('.app-words__items');
     const template: string = WordView.getWordImage(this.word);
@@ -29,16 +35,15 @@ export class Word {
 
   private addEventListeners(): void {
     const container: HTMLElement | null = document.getElementById(`${this.word.id}`);
-    const audio = <HTMLMediaElement>document.querySelector('.app-word__audio');
-    const audioMeaning = <HTMLMediaElement>document.querySelector('.app-word__audio-meaning');
-    const audioExample = <HTMLMediaElement>document.querySelector('.app-word__audio-example');
+    const audio = <HTMLAudioElement>document.querySelector('.app-word__audio');
+    const audioMeaning = <HTMLAudioElement>document.querySelector('.app-word__audio-meaning');
+    const audioExample = <HTMLAudioElement>document.querySelector('.app-word__audio-example');
 
     container?.addEventListener('click', (event) => {
       const isAudio = (<SVGSVGElement>event.target).classList.contains('app-word__audio-svg');
       console.log(isAudio);
 
       if (isAudio) {
-        audio.currentTime = 0;
         audio.play();
         setTimeout(() => {
           audioMeaning.play();

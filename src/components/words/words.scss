@@ -1,0 +1,16 @@
+.app-words {
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: 0 auto;
+    max-width: 1300px;
+  }
+
+  &__pagination {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+}

@@ -1,12 +1,12 @@
 import { ChapterView } from '../view';
+import './words.scss';
 
 export abstract class WordsView {
-  public static getWordsImage(): string {
+  public static getWordsImage(page: number): string {
     return `
       <div class="app-words">
         <div class="container">
           <div class="app-words__wrapper">
-            <div class="app-words__items"></div>
             <nav class="app-words__nav">
               <ul class="app-words__menu">
                 ${ChapterView.getChapterImage('Раздел 1')}
@@ -17,6 +17,12 @@ export abstract class WordsView {
                 ${ChapterView.getChapterImage('Раздел 6')}
               </ul>
             </nav>
+            <div class="app-words__items"></div>
+            <div class="app-words__pagination">
+              <button class="app-words__prev">Prev</button>
+              <button class="app-words__number">${page}</button>
+              <button class="app-words__next">Next</button>
+            </div>
           </div>
         </div>
       </div>
