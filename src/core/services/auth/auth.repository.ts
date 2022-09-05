@@ -7,9 +7,7 @@ export class AuthRepository {
     try {
       const res = await fetch(`${Endpoints.AppHost}/users`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
       return await (<Promise<ISignUp>>res.json());
@@ -23,10 +21,7 @@ export class AuthRepository {
     try {
       const res = await fetch(`${Endpoints.AppHost}/signin`, {
         method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
       return await (<Promise<ISignInResponse>>res.json());

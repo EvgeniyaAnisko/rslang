@@ -1,0 +1,34 @@
+#auth-page {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.auth-buttons {
+    display: flex;
+}
+
+#auth-inputs {
+    margin-top: 50px;
+}
+
+.auth-page__text-wrapper {
+    width: 310px;
+}
+
+.auth-page__text {
+    color: #10B582;
+    font-size: 35px;
+}
+
+.auth-page__span {
+    color: #FA9F42;
+    font-weight: bold;
+}
+
+.auth-logOut {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
