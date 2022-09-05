@@ -4,9 +4,9 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  justify-content: space-evenly;
   flex-direction: column;
-  /* padding: 20px; */
+  justify-content: center;
+  flex-wrap: nowrap;
 }
 
 h1 {
@@ -35,10 +35,21 @@ h1 {
   text-align: center;
 }
 
+.switch-games-page__image{
+  height: 20vh;
+  width: 20vh;
+}
 .switch-games-page__image > svg:hover{
   fill: #FA9F42 !important;
 }
 
 .switch-games-page__image > svg{
   transition: 0.5s;
+}
+
+.levels-wrapper{
+  flex-direction: row;
+  margin: 0;
+  justify-content: center;
+  flex-wrap: nowrap;
 }

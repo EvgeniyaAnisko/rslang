@@ -5,4 +5,15 @@
   color: #fdfdfd;
   padding: 10px;
   font-family: 'Raleway Medium', arial;
+  transition: 0.5s;
+  font-size: medium;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn:hover,
+.btn.active{
+  background-color: #fdfdfd;
+  border-color: #fdfdfd;
+  color: #FA9F42;
 }

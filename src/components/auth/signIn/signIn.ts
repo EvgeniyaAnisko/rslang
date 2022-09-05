@@ -1,9 +1,11 @@
+/* eslint-disable prettier/prettier */
 import { SignInView } from './signIn.view';
 import { AuthService } from '../../../core';
 import { EmailValidation, PasswordValidation } from '../view';
 import { User } from '../../user';
 import { SignInButton, SignUpButton } from '../../app';
 import './signIn.css';
+import { Statistics } from '../../statistics';
 
 export class SignIn {
   private authService: AuthService;
@@ -43,6 +45,7 @@ export class SignIn {
       localStorage.setItem('token', res.token);
       localStorage.setItem('userId', res.userId);
       new User().init();
+      new Statistics().init();
     } else {
       const incorrectInputs = <HTMLElement>document.querySelector('.incorrect-inputs');
       incorrectInputs.classList.remove('hidden');

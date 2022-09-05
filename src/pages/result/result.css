@@ -1,0 +1,99 @@
+#result-page{
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: 1920px;
+  width: 100vw;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.answer__wrapper{
+  display: flex;
+  align-content: center;
+  padding: 0 10px;
+  align-items: center;
+  width: calc(100% - 20px);
+}
+
+.result-page__wrapper{
+  background-color: #10b582;
+  margin: auto;
+  width: 50%;
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+
+.result-statistic__wrapper.active{
+  display: flex;
+}
+
+.result-answers__wrapper.active{
+  display: block;
+  overflow-y: scroll;
+}
+
+
+.result-statistic__wrapper,
+.result-answers__wrapper{
+  display: none;
+  height: 39vh;
+  margin: 1vw;
+}
+
+.result-statistic__wrapper{
+  gap: 1vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.result-switch{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+
+.total-score__percentage{
+  height: 12vh;
+  width: 12vh;
+  border-radius: 100%;
+  background: #fdfdfd;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer__wrapper svg {
+  width: 2vh;
+}
+
+.answer__index,
+.answer__sound {
+  width: 10%;
+}
+
+.answer__word,
+.answer__translate{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.answer__translate{
+  font-style: oblique;
+}
+
+.answer__word__wrapper{
+  display: flex;
+  /* width: 80%; */
+  flex-direction: column;
+  padding: 10px;
+}

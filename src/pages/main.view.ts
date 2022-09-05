@@ -1,4 +1,5 @@
-import { newComponent, links, authorsFooter } from '../components';
+// eslint-disable-next-line object-curly-newline
+import { newComponent, links, PaginationView, authorsFooter } from '../components';
 import { AboutPageView } from './about';
 import { AuthPageView } from './auth';
 import './main.css';
@@ -19,9 +20,9 @@ export default class MainView {
     this.main = newComponent('main');
     this.footer = newComponent('footer');
 
-    document.body.appendChild(this.header);
-    document.body.appendChild(this.main);
-    document.body.appendChild(this.footer);
+    document.getElementById('root')?.appendChild(this.header);
+    document.getElementById('root')?.appendChild(this.main);
+    document.getElementById('root')?.appendChild(this.footer);
   }
 
   render() {
@@ -36,6 +37,20 @@ export default class MainView {
     const navWrapper = newComponent('div', '', ['nav-wrapper']);
     navWrapper.appendChild(nav);
     this.header.appendChild(navWrapper);
+
+    nav.addEventListener('click', (event) => {
+      const target = <HTMLElement>event.target;
+      if (target.tagName === 'A') {
+        const temp = document.getElementById('result-page');
+        if (temp) {
+          temp.innerHTML = '';
+          if (temp.parentElement) {
+            temp.parentElement.remove();
+          }
+          document.body.style.overflow = 'auto';
+        }
+      }
+    });
   }
 
   renderMain() {
@@ -45,15 +60,15 @@ export default class MainView {
     const vocabularyPageView = new VocabularyPageView();
     const statisticPageView = new StatisticPageView();
     const authPageView = new AuthPageView();
-    const buttonNextPage = newComponent('div', 'Словарь', ['next-page']);
-    buttonNextPage.id = 'showScroll';
+    const paginationView = new PaginationView();
     this.main.appendChild(startView.render());
     this.main.appendChild(vocabularyPageView.render());
     this.main.appendChild(switchGamesPageView.render());
     this.main.appendChild(statisticPageView.render());
     this.main.appendChild(aboutPageView.render());
     this.main.appendChild(authPageView.render());
-    this.main.appendChild(buttonNextPage);
+    this.main.appendChild(paginationView.render()[0]);
+    this.main.appendChild(paginationView.render()[1]);
   }
 
   renderFooter() {

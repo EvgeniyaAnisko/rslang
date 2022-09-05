@@ -1,14 +1,20 @@
+/* eslint-disable max-len */
+/* eslint-disable prettier/prettier */
 import { SignUpView } from './signUp.view';
 import { AuthService } from '../../../core';
 import { EmailValidation, PasswordValidation, NameValidation } from '../view';
 import { SignIn } from '../signIn';
 import { SignInButton, SignUpButton } from '../../app';
+import { StatisticService } from '../../../core/services/statistic';
 
 export class SignUp {
   private authService: AuthService;
 
+  private statisticService: StatisticService;
+
   constructor() {
     this.authService = new AuthService();
+    this.statisticService = new StatisticService();
   }
 
   public init(): void {
@@ -42,6 +48,7 @@ export class SignUp {
     if (res) {
       const signIn = new SignIn();
       signIn.init();
+      await this.statisticService.put({ learnedWords: 0, optional: {} });
     } else {
       const incorrectInputs = <HTMLElement>document.querySelector('.incorrect-inputs');
       incorrectInputs.classList.remove('hidden');

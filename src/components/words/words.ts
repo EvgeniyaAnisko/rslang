@@ -33,7 +33,7 @@ export class Words {
   }
 
   private renderWords(): void {
-    const root: HTMLElement | null = document.getElementById('root');
+    const root: HTMLElement | null = document.getElementById('vocabulary-page');
     const template: string = WordsView.getWordsImage();
 
     if (root) root.innerHTML = template;
