@@ -1,5 +1,6 @@
 import { newComponent, SignIn, SignUp } from '../../components';
 import './auth.css';
+import { Button } from '../../components/statistics';
 
 export class AuthPageView {
   root: HTMLElement;
@@ -59,6 +60,16 @@ export class AuthPageView {
                 </div>`,
         );
         signIn.init();
+
+        const statistics = <HTMLElement>document.getElementById('statistic-page');
+        statistics.innerHTML = '';
+        statistics.insertAdjacentHTML(
+          'beforeend',
+          `<div class="statistic-wrapper">
+                <div class="statistic-text">Log in to get your results</div>
+                <div>${Button.getButtonImage()}</div>
+              </div>`,
+        );
       }
     });
 

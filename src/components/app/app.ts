@@ -1,6 +1,7 @@
 import MainView from '../../pages/main.view';
 import { SignIn } from '../auth';
 import { User } from '../user';
+import { Statistics } from '../statistics';
 
 export class App {
   public init(): void {
@@ -15,6 +16,7 @@ export class App {
       signIn.init();
     } else {
       new User().init();
+      new Statistics().init();
     }
   }
 }
