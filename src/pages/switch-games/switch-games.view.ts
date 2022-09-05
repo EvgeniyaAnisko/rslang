@@ -1,5 +1,6 @@
 import { createButton } from '../../components';
 import { newComponent } from '../../components/base-components/base-components';
+import { AudiocalllGamePageView } from '../audiocall';
 import { SprintGamePageView } from '../sprint';
 import { audioSVG } from './audio-svg';
 import { sprintSVG } from './sprint-svg';
@@ -59,6 +60,11 @@ export class SwitchGamesPageView {
     const audioWrapper = newComponent('div', '', ['switch-game-wrapper']);
     const audioTitle = newComponent('h2', 'Аудиовызов', ['switch-games-page__title']);
     const audioImage = newComponent('div', audioSVG('#fff'), ['switch-games-page__image']);
+
+    audioWrapper.onclick = () => {
+      const temp = new AudiocalllGamePageView();
+      this.root.appendChild(temp.render(this.page, this.group));
+    };
 
     audioWrapper.appendChild(audioTitle);
     audioWrapper.appendChild(audioImage);

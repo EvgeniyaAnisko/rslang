@@ -41,6 +41,20 @@ export default class MainView {
     const navWrapper = newComponent('div', '', ['nav-wrapper']);
     navWrapper.appendChild(nav);
     this.header.appendChild(navWrapper);
+
+    nav.addEventListener('click', (event) => {
+      const target = <HTMLElement>event.target;
+      if (target.tagName === 'A') {
+        const temp = document.getElementById('result-page');
+        if (temp) {
+          temp.innerHTML = '';
+          if (temp.parentElement) {
+            temp.parentElement.remove();
+          }
+          document.body.style.overflow = 'auto';
+        }
+      }
+    });
   }
 
   renderMain() {

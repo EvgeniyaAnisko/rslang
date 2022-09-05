@@ -1,7 +1,6 @@
-import { createButton, newComponent } from '../../components';
+import { createButton, newComponent, soundSVG } from '../../components';
 import { Endpoints, IWord } from '../../core';
 import './result.css';
-import { soundSVG } from './sound';
 
 export class ResultPageView {
   root: HTMLElement;
@@ -41,7 +40,7 @@ export class ResultPageView {
   exitButton: HTMLElement;
 
   constructor() {
-    this.root = newComponent('div', '', ['page']);
+    this.root = newComponent('div', '', ['page', 'game-page']);
     this.root.id = 'result-page';
 
     this.rootWrapper = newComponent('div', '', ['result-page__wrapper']);
@@ -94,7 +93,8 @@ export class ResultPageView {
   }
 
   renderResult(score: number, correctWords: number, wrongWords: number) {
-    this.totalScore.innerHTML = `Общий счёт: ${score}`;
+    if (score !== 0) this.totalScore.innerHTML = `Общий счёт: ${score}`;
+    else this.totalScore.innerHTML = 'Результат игры';
     this.correctAnswersCounter.innerHTML = `Правильных ответов: ${correctWords}`;
     this.wrongAnswersCounter.innerHTML = `Ошибочных ответов: ${wrongWords}`;
     this.statisticPercentage.innerHTML = `${Math.trunc((correctWords * 100) / (correctWords + wrongWords)) || 0}%`;

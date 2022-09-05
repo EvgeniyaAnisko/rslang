@@ -17,7 +17,7 @@ enum Cofficient {
 }
 
 export class Sprint {
-  words!: Array<IWord>;
+  words: Array<IWord> = [];
   timer: Timer;
   protected timerFinish = false;
   protected timerInterval: string | number | NodeJS.Timeout | null | undefined;
@@ -55,7 +55,7 @@ export class Sprint {
   }
 
   async getWords(): Promise<void> {
-    this.words = await new WordsRepository().getWords(this.page, this.group);
+    this.words.push(...(await new WordsRepository().getWords(this.page, this.group)));
     this.words.sort(() => Math.random() - 0.5);
   }
 

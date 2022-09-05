@@ -87,20 +87,19 @@ footer {
   cursor: pointer;
   padding: 10px 0;
   color: #fdfdfd;
+  /* border-bottom: 2px dashed #10B582; */
+}
+
+.nav-link{
   border-bottom: 2px dashed #10B582;
 }
 
-.nav-item:hover,
+.nav-link:hover,
 .nav-link.active,
 .footer-link:hover {
   border-bottom: 2px dashed #FA9F42;
 }
 
-/* {
-  background: #FA9F42;
-  border-radius: 0px 20px;
-  transition: 0.5s;
-} */
 /* footer */
 
 .footer-container {

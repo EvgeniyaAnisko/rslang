@@ -1,0 +1,90 @@
+.audiocall-game-wrapper {
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  z-index: 1;
+  background-color: #e5e5e5;
+  position: fixed;
+  top: 10vh;
+  gap: 4vh;
+  max-width: 1920px;
+  width: 100vw;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+
+.audiocall-life-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 1vw;
+  padding-right: 1vw;
+}
+
+.audiocall-life-wrapper .audiocall-block {
+  border-radius: 20px 0px;
+  background-color: #FA9F42;
+  border: 1px solid #FA9F42;
+}
+
+.audiocall-life-wrapper .audiocall-block.inactive {
+  background-color: inherit;
+}
+
+.audiocall-block {
+  min-width: 5vw;
+  text-align: center;
+  background: inherit;
+  border-radius: 0px 20px;
+  border: 1px dotted #10b582;
+  color: #000;
+  padding: 10px;
+  font-family: 'Raleway Medium', arial;
+  transition: 0.5s;
+  font-size: medium;
+}
+
+.audiocall-block.error{
+  background-color: #FA9F42;
+}
+
+.audiocall-block.correct{
+  background-color: #10b582;
+}
+
+.audiocall-block-wrapper {
+  gap: 1vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+}
+
+.audiocall-question__sound {
+  border-radius: 100%;
+  width: 30vh;
+  height: 30vh;
+  background-color: #10b582;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.audiocall-question__sound svg {
+  width: 15vh;
+  transition: 0.5s;
+}
+
+.audiocall-question__sound:hover svg {
+  width: 20vh;
+}
+
+.audiocall-question__sound img{
+    width: inherit;
+    height: inherit;
+    border-radius: 100%;
+}
