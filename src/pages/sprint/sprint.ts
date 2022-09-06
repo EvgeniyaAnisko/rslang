@@ -7,7 +7,7 @@ import { Timer } from './timer';
 
 const BASE_SCORE_STEP = 20;
 
-const TIME_GAME = 10;
+const TIME_GAME = 30;
 
 enum Cofficient {
   start = 1,
@@ -114,11 +114,12 @@ export class Sprint {
   }
 
   async generateQuestion() {
+    this.pauseTimer();
     if (this.words.length < 1) {
-      this.group--;
+      this.page--;
+      if (this.page < 0) this.stopTimer();
       await this.getWords();
     }
-
     const randomText = Math.floor(Math.random() * (5 || this.words.length));
     this.isRightAnswer = randomText === 0;
 
@@ -129,6 +130,7 @@ export class Sprint {
     this.wordImage.innerHTML = `<img src="${Endpoints.AppHost}/${this.words[indexActual].image}" alt="" class="app-word__img">`;
     this.wordEnglish.innerHTML = this.words[indexActual].word;
     this.wordTranslate.innerHTML = this.words[indexTranslate].wordTranslate;
+    this.continueTimer();
   }
 
   updateCofficient() {

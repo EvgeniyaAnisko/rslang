@@ -35,14 +35,12 @@ export class Word {
 
   private addEventListeners(): void {
     const container: HTMLElement | null = document.getElementById(`${this.word.id}`);
-    const audio = <HTMLAudioElement>document.querySelector('.app-word__audio');
-    const audioMeaning = <HTMLAudioElement>document.querySelector('.app-word__audio-meaning');
-    const audioExample = <HTMLAudioElement>document.querySelector('.app-word__audio-example');
+    const audio = <HTMLAudioElement>container?.querySelector('.app-word__audio');
+    const audioMeaning = <HTMLAudioElement>container?.querySelector('.app-word__audio-meaning');
+    const audioExample = <HTMLAudioElement>container?.querySelector('.app-word__audio-example');
 
     container?.addEventListener('click', (event) => {
       const isAudio = (<SVGSVGElement>event.target).classList.contains('app-word__audio-svg');
-      console.log(isAudio);
-
       if (isAudio) {
         audio.play();
         setTimeout(() => {

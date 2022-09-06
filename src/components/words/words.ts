@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { IWord, WordsService } from '../../core';
 import { Word } from '../word';
 import { WordsView } from './words.view';
@@ -45,6 +46,19 @@ export class Words {
     if (paginationBtn) {
       paginationBtn.addEventListener('click', this.updatePage.bind(this));
     }
+
+    const wordsMenuItems: NodeListOf<HTMLElement> = document.querySelectorAll('.app-words__menu-item');
+    wordsMenuItems.forEach((item: HTMLElement) => {
+      if (item.dataset.group === String(this.group)) item.classList.add('active');
+    });
+    const wordsMenu = document.querySelector('.app-words__menu');
+    wordsMenu?.addEventListener('click', async (event) => {
+      const target = <HTMLElement>event.target;
+      if (target.classList.contains('app-words__menu-item')) {
+        this.group = Number(target.dataset.group);
+        await this.init();
+      }
+    });
   }
 
   private updatePage(event: Event): void {

@@ -153,7 +153,8 @@ export class Audiocall {
   async generateQuestion() {
     this.updateViewButton('remove');
     if (this.words.length < 5) {
-      this.group--;
+      this.page--;
+      if (this.page < 0) this.stopGame();
       await this.getWords();
     }
     this.words.sort(() => Math.random() - 0.5);
@@ -182,6 +183,7 @@ export class Audiocall {
     this.block4.dataset.word = tempArr[3].word;
     this.block5.innerHTML = `5. ${tempArr[4].wordTranslate}`;
     this.block5.dataset.word = tempArr[4].word;
+    audio.play();
   }
 
   updateViewLife() {
