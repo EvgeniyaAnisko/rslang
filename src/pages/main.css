@@ -5,12 +5,14 @@
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
+  font-size: 16px;
 }
 
 html {
   display: flex;
   width: 100%;
   justify-content: center;
+  min-width: 320px;
   /* scroll-behavior: smooth; */
 }
 
@@ -50,7 +52,6 @@ header {
   z-index: 2;
   height: 10vh;
   width: 100vw;
-  font-size: 2vw;
 }
 
 footer {
@@ -117,7 +118,7 @@ footer {
   gap: 20px;
   padding: 0 20px;
   flex-wrap: nowrap;
-  font-size: 2vw;
+  font-size: 16px;
 }
 
 .footer-item,
