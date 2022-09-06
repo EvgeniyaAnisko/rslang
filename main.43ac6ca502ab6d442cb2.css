@@ -278,7 +278,7 @@ h1{
 .result-page__wrapper{
   background-color: #10b582;
   margin: auto;
-  width: 50%;
+  width: 60%;
   height: 45vh;
   display: flex;
   flex-direction: column;
@@ -372,10 +372,11 @@ h1{
   justify-content: center;
   align-items: center;
   color: #000;
+  align-content: center;
 }
 
 .block {
-  width: 5vw;
+  width: 22%;
   text-align: center;
   background: inherit;
   border-radius: 0px 20px;
@@ -395,6 +396,7 @@ h1{
 
 .block-wrapper {
   width: 22vw;
+  min-width: 200px;
   gap: 1vw;
   display: flex;
   flex-wrap: wrap;
@@ -529,6 +531,10 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.author-role{
+  font-size: 1rem;
 }
 
 @media (max-width: 600px) {
