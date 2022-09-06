@@ -6,6 +6,17 @@
     gap: 40px;
     margin: 0 auto;
     max-width: 1300px;
+    justify-items: center;
+    min-height: 3854px;
+    
+    @media (max-width: 1250px) {
+      grid-template-columns: repeat(2, 1fr);
+      min-height: 5294px;
+    }
+    @media (max-width: 859px) {
+      grid-template-columns: repeat(1, 1fr);
+      min-height: 9962px;
+    }
   }
 
   &__pagination {
@@ -14,4 +25,9 @@
     justify-content: center;
     margin: 20px 0;
   }
+}
+
+.app-word{
+  min-width: 300px;
+  max-width: 500px;
 }

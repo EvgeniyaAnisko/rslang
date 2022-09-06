@@ -11,13 +11,12 @@ export class App {
   }
 
   public renderApp(): void {
-    const root = <HTMLElement>document.getElementById('root');
-    root.innerHTML = AppView.getAppImage();
-
     const mainView = new MainView();
     mainView.render();
+
     const words = new Words(new WordsService(new WordsRepository()));
     words.init();
+
     const signIn = new SignIn();
     if (!localStorage.getItem('token')) {
       signIn.init();

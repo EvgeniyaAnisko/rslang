@@ -16,6 +16,8 @@ export class VocabularyPageView {
     const vocabularyWrapper = newComponent('div', '', ['switch-game-wrapper']);
     const vocabularyButton = createButton('Перейти к словарю');
 
+    const vocabularyWrapperWords = newComponent('div', '', ['vocabulary-wrapper']);
+
     vocabularyButton.addEventListener('click', () => {
       const temp = new Words(new WordsService(new WordsRepository()));
       temp.init();
@@ -24,6 +26,7 @@ export class VocabularyPageView {
     vocabularyWrapper.appendChild(title);
     vocabularyWrapper.appendChild(vocabularyButton);
     this.root.appendChild(vocabularyWrapper);
+    this.root.appendChild(vocabularyWrapperWords);
     return this.root;
   }
 }

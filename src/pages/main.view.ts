@@ -25,7 +25,7 @@ export default class MainView {
     document.getElementById('root')?.appendChild(this.footer);
   }
 
-  render() {
+  async render() {
     this.renderHeader();
     this.renderMain();
     this.renderFooter();
