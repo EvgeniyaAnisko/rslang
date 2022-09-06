@@ -1,9 +1,4 @@
-import { Words, App } from './components';
-import { WordsRepository, WordsService } from './core';
-
-const words = new Words(new WordsService(new WordsRepository()));
-
-words.init();
+import { App } from './components';
 
 fetch('https://evgeniyaanisko-rslang.herokuapp.com/words?page=2&group=0')
   .then((res: Response) => res.json())
