@@ -489,6 +489,13 @@ h1 {
 .app-words__wrapper{
   margin: 10px;
 }
+
+.vocabulary-switch-game-wrapper{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
 #about-page{
   background: #10b582;
   color: #fdfdfd;
@@ -546,12 +553,14 @@ h1 {
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
+  font-size: 16px;
 }
 
 html {
   display: flex;
   width: 100%;
   justify-content: center;
+  min-width: 320px;
   /* scroll-behavior: smooth; */
 }
 
@@ -591,7 +600,6 @@ header {
   z-index: 2;
   height: 10vh;
   width: 100vw;
-  font-size: 2vw;
 }
 
 footer {
@@ -658,7 +666,7 @@ footer {
   gap: 20px;
   padding: 0 20px;
   flex-wrap: nowrap;
-  font-size: 2vw;
+  font-size: 16px;
 }
 
 .footer-item,
@@ -1024,7 +1032,7 @@ footer {
 }
 .app-words__menu{display:flex;justify-content:center;list-style:none;gap:30px;margin-bottom:30px}.app-words__menu-item:nth-child(2){background:#2f1d62}.app-words__menu-item:nth-child(3){background:#5b254f}.app-words__menu-item:nth-child(4){background:#1a5f0c}.app-words__menu-item:nth-child(5){background:#5d331f}.app-words__menu-item:nth-child(6){background:#911313}
 .app-word{display:flex;flex-direction:column;gap:10px}.app-word__header{display:flex;align-items:center;gap:15px}.app-word__header img{width:50px;height:50px;cursor:pointer}
-.app-words{padding-top:10vh}.app-words__items{display:grid;grid-template-columns:repeat(3, 1fr);gap:40px;margin:0 auto;max-width:1300px;justify-items:center;min-height:3854px}@media(max-width: 1250px){.app-words__items{grid-template-columns:repeat(2, 1fr);min-height:5294px}}@media(max-width: 859px){.app-words__items{grid-template-columns:repeat(1, 1fr);min-height:9962px}}.app-words__pagination{display:flex;gap:15px;justify-content:center;margin:20px 0}.app-word{min-width:300px;max-width:500px}
+.app-words__items{display:grid;grid-template-columns:repeat(3, 1fr);gap:40px;margin:0 auto;max-width:1300px;justify-items:center;min-height:3854px}@media(max-width: 1250px){.app-words__items{grid-template-columns:repeat(2, 1fr);min-height:5294px}}@media(max-width: 859px){.app-words__items{grid-template-columns:repeat(1, 1fr);min-height:9962px}}.app-words__pagination{display:flex;gap:15px;justify-content:center;margin:20px 0}.app-word{min-width:300px;max-width:500px}
 .next-page {
   display: block;
   position: sticky;
