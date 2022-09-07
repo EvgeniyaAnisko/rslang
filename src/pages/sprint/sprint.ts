@@ -4,6 +4,8 @@
 import { Endpoints, IWord, WordsRepository } from '../../core';
 import { ResultPageView } from '../result';
 import { Timer } from './timer';
+import { IStatistics } from '../../core/services/models/IStatistics';
+import { StatisticService } from '../../core/services/statistic';
 
 const BASE_SCORE_STEP = 20;
 
@@ -43,6 +45,8 @@ export class Sprint {
   totalScore = 0;
   cofficient: Cofficient = Cofficient.start;
   seriesСorrectAnswers = 0;
+
+  statisticsService: StatisticService = new StatisticService();
 
   resultPage!: ResultPageView;
   resultPageView!: HTMLElement;
@@ -177,7 +181,7 @@ export class Sprint {
     this.timer.continue();
   }
 
-  stopTimer() {
+  async stopTimer() {
     if (this.timerInterval !== null) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       clearInterval(this.timerInterval);
@@ -195,6 +199,29 @@ export class Sprint {
       this.buttonIncorrect.removeEventListener('click', this.incorrectButtonListner);
       this.sprintWrapper.innerHTML = '';
       this.timerFinish = true;
+
+      const statistics = <IStatistics>await this.statisticsService.get();
+      if (statistics?.optional.maxSprint < this.totalScore) {
+        await this.statisticsService.put({
+          learnedWords: 0,
+          optional: {
+            maxAudio: statistics.optional.maxAudio,
+            maxSprint: this.totalScore,
+            lastSpring: this.totalScore,
+            lastAudio: statistics.optional.lastAudio,
+          },
+        });
+      } else {
+        await this.statisticsService.put({
+          learnedWords: 0,
+          optional: {
+            maxAudio: statistics.optional.maxAudio,
+            maxSprint: statistics.optional.maxSprint,
+            lastSpring: this.totalScore,
+            lastAudio: statistics.optional.lastSpring,
+          },
+        });
+      }
     }
   }
 }

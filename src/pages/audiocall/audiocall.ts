@@ -4,6 +4,8 @@
 import { ResultPageView } from '..';
 import { soundSVG } from '../../components';
 import { Endpoints, IWord, WordsRepository } from '../../core';
+import { StatisticService } from '../../core/services/statistic';
+import { IStatistics } from '../../core/services/models/IStatistics';
 
 export class Audiocall {
   words: Array<IWord> = [];
@@ -11,6 +13,8 @@ export class Audiocall {
   private countCorrect = 0;
   page = 0;
   group = 0;
+
+  statisticsService: StatisticService = new StatisticService();
 
   audiocallWrapper!: HTMLElement;
   audiocallTitle!: HTMLElement;
@@ -208,7 +212,7 @@ export class Audiocall {
     }
   }
 
-  stopGame() {
+  async stopGame() {
     if (this.life < 1) {
       this.resultPage.updateRender(
         this.correctAnswers,
@@ -218,6 +222,28 @@ export class Audiocall {
         // eslint-disable-next-line @typescript-eslint/comma-dangle
         this.countWrong
       );
+      const statistics = <IStatistics>await this.statisticsService.get();
+      if (statistics?.optional.maxAudio < this.countCorrect) {
+        await this.statisticsService.put({
+          learnedWords: 0,
+          optional: {
+            maxAudio: this.countCorrect,
+            maxSprint: statistics.optional.maxSprint,
+            lastSpring: statistics.optional.lastSpring,
+            lastAudio: this.countCorrect,
+          },
+        });
+      } else {
+        await this.statisticsService.put({
+          learnedWords: 0,
+          optional: {
+            maxAudio: statistics.optional.maxAudio,
+            maxSprint: statistics.optional.maxSprint,
+            lastSpring: statistics.optional.lastSpring,
+            lastAudio: this.countCorrect,
+          },
+        });
+      }
       this.resultPageView.style.display = 'flex';
       document.removeEventListener('keydown', this.listner);
       this.blockWrapper.removeEventListener('click', this.mouseListner);
