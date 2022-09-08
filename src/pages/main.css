@@ -1,0 +1,157 @@
+@import url(https://allfont.ru/allfont.css?fonts=raleway-medium);
+@import url(https://allfont.ru/allfont.css?fonts=raleway-regular);
+
+* {
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  font-size: 16px;
+}
+
+html {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  min-width: 320px;
+  /* scroll-behavior: smooth; */
+}
+
+body {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+}
+
+/* body { */
+#root {
+  background-color: #e5e5e5;
+  max-width: 1920px;
+  width: 100vw;
+  display: flex;
+  min-height: 100vh;
+  width: inherit;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+header {
+  position: fixed;
+  width: inherit;
+  max-width: 1920px;
+  top: 0;
+  z-index: 2;
+  height: 10vh;
+  width: 100vw;
+}
+
+footer {
+  bottom: 0;
+  width: 100vw;
+  position: fixed;
+  max-width: 1920px;
+  height: 10vh;
+  flex-wrap: nowrap;
+}
+
+.page {
+  min-height: 80vh;
+  padding-top: 10vh;
+  width: 100vw;
+  max-width: 1920px;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  height: inherit;
+  background: #10b582;
+  font-family: 'Raleway Medium', arial;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  align-items: center;
+}
+
+.nav-item,
+.nav-link {
+  text-decoration: none;
+  transition: 0.5s;
+  list-style-type: none;
+  cursor: pointer;
+  padding: 10px 0;
+  color: #fdfdfd;
+}
+
+.nav-link{
+  border-bottom: 2px dashed #10B582;
+}
+
+.nav-link:hover,
+.nav-link.active,
+.footer-link:hover {
+  border-bottom: 2px dashed #FA9F42;
+}
+
+/* footer */
+
+.footer-container {
+  background: #10B582;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+  gap: 20px;
+  padding: 0 20px;
+  flex-wrap: nowrap;
+  font-size: 16px;
+}
+
+.footer-item,
+.footer-link {
+  list-style: none;
+  font-family: 'Raleway Medium', arial;
+  color: #fdfdfd;
+  padding: 10px 0;
+  border-bottom: 2px dashed #10b582;
+  transition: 0.5s;
+}
+
+.nav-link,
+.footer-link {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.footer-link>svg {
+  height: 40px;
+  width: auto;
+}
+
+.authors {
+  display: flex;
+  align-content: center;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media (max-width: 400px) {
+  .app-word > img{
+    width: 100%;
+  }
+}

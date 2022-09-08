@@ -1,0 +1,10 @@
+.app-words__wrapper{
+  margin: 10px;
+}
+
+.vocabulary-switch-game-wrapper{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
