@@ -4,10 +4,12 @@
 import { Endpoints, IWord, WordsRepository } from '../../core';
 import { ResultPageView } from '../result';
 import { Timer } from './timer';
+import { IStatistics } from '../../core/services/models/IStatistics';
+import { StatisticService } from '../../core/services/statistic';
 
 const BASE_SCORE_STEP = 20;
 
-const TIME_GAME = 10;
+const TIME_GAME = 30;
 
 enum Cofficient {
   start = 1,
@@ -43,6 +45,8 @@ export class Sprint {
   totalScore = 0;
   cofficient: Cofficient = Cofficient.start;
   seriesСorrectAnswers = 0;
+
+  statisticsService: StatisticService = new StatisticService();
 
   resultPage!: ResultPageView;
   resultPageView!: HTMLElement;
@@ -114,11 +118,12 @@ export class Sprint {
   }
 
   async generateQuestion() {
+    this.pauseTimer();
     if (this.words.length < 1) {
-      this.group--;
+      this.page--;
+      if (this.page < 0) this.stopTimer();
       await this.getWords();
     }
-
     const randomText = Math.floor(Math.random() * (5 || this.words.length));
     this.isRightAnswer = randomText === 0;
 
@@ -129,6 +134,7 @@ export class Sprint {
     this.wordImage.innerHTML = `<img src="${Endpoints.AppHost}/${this.words[indexActual].image}" alt="" class="app-word__img">`;
     this.wordEnglish.innerHTML = this.words[indexActual].word;
     this.wordTranslate.innerHTML = this.words[indexTranslate].wordTranslate;
+    this.continueTimer();
   }
 
   updateCofficient() {
@@ -175,7 +181,7 @@ export class Sprint {
     this.timer.continue();
   }
 
-  stopTimer() {
+  async stopTimer() {
     if (this.timerInterval !== null) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       clearInterval(this.timerInterval);
@@ -193,6 +199,29 @@ export class Sprint {
       this.buttonIncorrect.removeEventListener('click', this.incorrectButtonListner);
       this.sprintWrapper.innerHTML = '';
       this.timerFinish = true;
+
+      const statistics = <IStatistics>await this.statisticsService.get();
+      if (statistics?.optional.maxSprint < this.totalScore) {
+        await this.statisticsService.put({
+          learnedWords: 0,
+          optional: {
+            maxAudio: statistics.optional.maxAudio,
+            maxSprint: this.totalScore,
+            lastSpring: this.totalScore,
+            lastAudio: statistics.optional.lastAudio,
+          },
+        });
+      } else {
+        await this.statisticsService.put({
+          learnedWords: 0,
+          optional: {
+            maxAudio: statistics.optional.maxAudio,
+            maxSprint: statistics.optional.maxSprint,
+            lastSpring: this.totalScore,
+            lastAudio: statistics.optional.lastSpring,
+          },
+        });
+      }
     }
   }
 }

@@ -1,22 +1,27 @@
 import { ChapterView } from '../view';
+import './words.scss';
+
+const chapters = Array(6)
+  .fill(1)
+  .map((item: number, index: number) => ChapterView.getChapterImage(`Раздел ${index + item}`, String(index)));
 
 export abstract class WordsView {
-  public static getWordsImage(): string {
+  public static getWordsImage(page: number): string {
     return `
       <div class="app-words">
         <div class="container">
           <div class="app-words__wrapper">
-            <div class="app-words__items"></div>
             <nav class="app-words__nav">
               <ul class="app-words__menu">
-                ${ChapterView.getChapterImage('Раздел 1')}
-                ${ChapterView.getChapterImage('Раздел 2')}
-                ${ChapterView.getChapterImage('Раздел 3')}
-                ${ChapterView.getChapterImage('Раздел 4')}
-                ${ChapterView.getChapterImage('Раздел 5')}
-                ${ChapterView.getChapterImage('Раздел 6')}
+              ${chapters.join('')}
               </ul>
             </nav>
+            <div class="app-words__items"></div>
+            <div class="app-words__pagination">
+              <button class="app-words__prev">Prev</button>
+              <button class="app-words__number">${page}</button>
+              <button class="app-words__next">Next</button>
+            </div>
           </div>
         </div>
       </div>

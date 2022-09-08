@@ -6,12 +6,16 @@ import { User } from '../../user';
 import { SignInButton, SignUpButton } from '../../app';
 import './signIn.css';
 import { Statistics } from '../../statistics';
+import { StatisticService } from '../../../core/services/statistic';
 
 export class SignIn {
   private authService: AuthService;
 
+  private statisticService: StatisticService;
+
   constructor() {
     this.authService = new AuthService();
+    this.statisticService = new StatisticService();
   }
 
   public init(): void {
@@ -45,6 +49,19 @@ export class SignIn {
       localStorage.setItem('token', res.token);
       localStorage.setItem('userId', res.userId);
       new User().init();
+
+      const getStat = await this.statisticService.get();
+      if (!getStat) {
+        await this.statisticService.put({
+          learnedWords: 0,
+          optional: {
+            maxAudio: 0,
+            maxSprint: 0,
+            lastAudio: 0,
+            lastSpring: 0,
+          },
+        });
+      }
       new Statistics().init();
     } else {
       const incorrectInputs = <HTMLElement>document.querySelector('.incorrect-inputs');

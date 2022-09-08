@@ -32,12 +32,18 @@
 .author-image > img{
   width: 20vh;
   height: 20vh;
+  max-width: 98vw;
+  max-height: 98vw;
 }
 
 .author-work{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.author-role{
+  font-size: 1rem;
 }
 
 @media (max-width: 600px) {

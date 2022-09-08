@@ -80,7 +80,10 @@ export class ResultPageView {
     this.switchPage.appendChild(this.fullInfo);
 
     this.exitButton = createButton('Главное меню');
-    this.exitButton.onclick = () => this.exit();
+    this.exitButton.onclick = () => {
+      this.exit();
+      window.location.reload();
+    };
     this.switchPage.appendChild(this.exitButton);
   }
 

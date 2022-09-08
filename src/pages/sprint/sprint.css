@@ -18,10 +18,11 @@
   justify-content: center;
   align-items: center;
   color: #000;
+  align-content: center;
 }
 
 .block {
-  width: 5vw;
+  width: 22%;
   text-align: center;
   background: inherit;
   border-radius: 0px 20px;
@@ -41,6 +42,7 @@
 
 .block-wrapper {
   width: 22vw;
+  min-width: 200px;
   gap: 1vw;
   display: flex;
   flex-wrap: wrap;

@@ -24,6 +24,7 @@
 .auth-page__span {
     color: #FA9F42;
     font-weight: bold;
+    font-size: 35px;
 }
 
 .auth-logOut {
